@@ -9,7 +9,7 @@ $out:=New object:C1471("success";False:C215)
 
 If ($in.dataClass#Null:C1517)
 	
-	$entity:=ds:C1482[$in.dataClass].new()  //create a reference
+	$entity:=ds:C1482[$in.dataClass].new()  //Create a reference
 	
 	For each ($key;$in.parameters)
 		
@@ -17,13 +17,24 @@ If ($in.dataClass#Null:C1517)
 		
 	End for each 
 	
-	$entity.employee:=ds:C1482.Projects.all().first().employee
+	$primaryKey:=$in.parent.primaryKey  //Get parent primary key
 	
-	$entity.save()  //save the entity
+	$inverseRelationName:=$in.entity.relationName  //Get parent relation name
+	
+	$parent:=ds:C1482[$in.parent.dataClass].get($in.parent.primaryKey)
+	
+	$entity[$inverseRelationName]:=$parent
+	
+	$status:=$entity.save()  //save the entity
+	
+	$status:=$parent.save()  //save the parent
 	
 	$out.success:=True:C214  // notify App that action success
+	
 	$out.dataSynchro:=True:C214  // notify App to refresh the selection
+	
 	$out.statusText:="Task added"
+	
 	$out.close:=True:C214
 	
 Else 

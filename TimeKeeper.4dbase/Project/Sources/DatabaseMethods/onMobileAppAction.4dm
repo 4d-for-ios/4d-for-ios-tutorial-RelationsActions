@@ -14,6 +14,8 @@ Case of
 		
 		$o:=New object:C1471(\
 			"dataClass";$context.dataClass;\
+			"parent";$context.parent;\
+			"entity";$context.entity;\
 			"parameters";$parameters)
 		$result:=addProject ($o)
 		
