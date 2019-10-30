@@ -1,0 +1,13 @@
+{
+  "type": "detailform",
+  "name": "TimeKeeperDetail",
+  "fields": {
+    "count": 5
+  },
+  "assets": {
+    "size": {
+      "width": 16,
+      "height": 16
+    }
+  }
+}

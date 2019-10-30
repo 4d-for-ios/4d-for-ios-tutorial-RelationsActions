@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="" uuid="858D08B2F8C140E697C99A40C8FE0F9B" collation_locale="en-gb">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="Employees" uuid="52EC211A6DC64579A3E0188F0214CF9F" id="1">
+		<field name="ID" uuid="914E994116FA4CC291FBE16A0C1FB06D" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Name" uuid="ADFB77983F2E42839ABF44F0293C7216" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Job" uuid="51048D646B3B4CFD99C8C8DF4FF27AE0" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="ProjectID" uuid="F714707A118E436A83607108AC66AC44" type="4" never_null="true" id="4"/>
+		<field name="Picture" uuid="E71452ECB903488397AA08A047ABD5F0" type="12" never_null="true" id="5"/>
+		<field name="PhoneNumber" uuid="1D5F512E9DD94110B0E6410207F8A660" type="10" limiting_length="255" never_null="true" id="6"/>
+		<field name="__GlobalStamp" uuid="65DD232C20034C2DBE450A301BE9735C" type="5" id="7"/>
+		<field name="Email" uuid="F0CECE40F9184D319253B9723858333F" type="10" limiting_length="255" never_null="true" id="8"/>
+		<primary_key field_name="ID" field_uuid="914E994116FA4CC291FBE16A0C1FB06D"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="9">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="46" top="68" width="242.24609375" height="231.17578125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Projects" uuid="1898CA6D30DA46098514D2DE3F654690" id="2">
+		<field name="ID" uuid="5090127D8FB54699905F770A140004C3" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="Name" uuid="405AC94BE7FB446D91691BD82892E718" type="10" limiting_length="255" never_null="true" id="2">
+			<field_extra position="2"/>
+		</field>
+		<field name="Category" uuid="C1FA30E92BE74CA98E2275DAB57DFF2A" type="10" limiting_length="255" never_null="true" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="Color" uuid="75574C2443E84886B5616AFE5FB226E4" type="3" never_null="true" id="4">
+			<field_extra position="4"/>
+		</field>
+		<field name="DefaultHourlyRate" uuid="10949A4D24C849AD90ECCFDFEEE032E0" type="6" never_null="true" id="5">
+			<field_extra position="6"/>
+		</field>
+		<field name="Time" uuid="7C8B1B0518A94BB2B063F2FC5AA1A70C" type="9" never_null="true" id="9"/>
+		<field name="EmployeeID" uuid="EA4DAFB874DA4C21BBB5CCC3F664C265" type="4" never_null="true" id="11"/>
+		<field name="Completion" uuid="757F8A286C6148EE8682D1DBA1D60BCE" type="6" never_null="true" id="13"/>
+		<field name="__GlobalStamp" uuid="8089AC8C9A3C49F3A0E2F64F37857797" type="5" id="15"/>
+		<primary_key field_name="ID" field_uuid="5090127D8FB54699905F770A140004C3"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="9">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="301.05078125" top="68.7265625" width="231.2578125" height="230.38671875"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="__DeletedRecords" uuid="03E04221D1394C34A86771AEEC7AC05F" id="3" leave_tag_on_delete="true" prevent_journaling="true">
+		<field name="ID" uuid="82DD203DE1584E37BE03161A24577282" type="5" unique="true" autosequence="true" id="1"/>
+		<field name="__Stamp" uuid="A9166634875247DFA548E9617A89DC61" type="5" id="2"/>
+		<field name="__TableNumber" uuid="59EEB1F2862744FAA34C33F25D99C81E" type="4" id="3"/>
+		<field name="__TableName" uuid="000E48442C7149B28B2A37946423E8F3" type="10" limiting_length="255" id="4"/>
+		<field name="__PrimaryKey" uuid="51E57EECF5E74CBC906885BCC25B8841" type="10" limiting_length="255" id="5"/>
+		<primary_key field_name="ID" field_uuid="82DD203DE1584E37BE03161A24577282"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info fields_ordering="1" displayable_fields_count="9">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="653.97265625" top="69.25390625" width="158.89453125" height="235.6875"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<relation uuid="B33513CD4950448E82A28A2BDE0CC73E" name_Nto1="employee" name_1toN="tasks" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="EA4DAFB874DA4C21BBB5CCC3F664C265" name="EmployeeID">
+				<table_ref uuid="1898CA6D30DA46098514D2DE3F654690" name="Projects"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="914E994116FA4CC291FBE16A0C1FB06D" name="ID">
+				<table_ref uuid="52EC211A6DC64579A3E0188F0214CF9F" name="Employees"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="8" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="255" green="255" blue="255" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<index kind="regular" name="__GlobalStamp_employees" uuid="1004B6BA82D34048A1F7FC14690645E7" type="7">
+		<field_ref uuid="65DD232C20034C2DBE450A301BE9735C" name="__GlobalStamp">
+			<table_ref uuid="52EC211A6DC64579A3E0188F0214CF9F" name="Employees"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="147D849BE7144B2BB2A93939E7EA758D" type="7">
+		<field_ref uuid="5090127D8FB54699905F770A140004C3" name="ID">
+			<table_ref uuid="1898CA6D30DA46098514D2DE3F654690" name="Projects"/>
+		</field_ref>
+	</index>
+	<index kind="regular" name="__GlobalStamp_projects" uuid="457DC4D23A894680A043A40E50022EDF" type="7">
+		<field_ref uuid="8089AC8C9A3C49F3A0E2F64F37857797" name="__GlobalStamp">
+			<table_ref uuid="1898CA6D30DA46098514D2DE3F654690" name="Projects"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" name="__DeletedRecordsID" uuid="665C572E5CE14AAFB08C2A4264921505" type="7">
+		<field_ref uuid="82DD203DE1584E37BE03161A24577282" name="ID">
+			<table_ref uuid="03E04221D1394C34A86771AEEC7AC05F" name="__DeletedRecords"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="74CD7D11B8F7494395F07AEEE423BA60" type="7">
+		<field_ref uuid="914E994116FA4CC291FBE16A0C1FB06D" name="ID">
+			<table_ref uuid="52EC211A6DC64579A3E0188F0214CF9F" name="Employees"/>
+		</field_ref>
+	</index>
+	<index kind="regular" name="__DeletedRecords__Stamp" uuid="A476145FB0ED4FBB8D0D9B9A221A2C33" type="7">
+		<field_ref uuid="A9166634875247DFA548E9617A89DC61" name="__Stamp">
+			<table_ref uuid="03E04221D1394C34A86771AEEC7AC05F" name="__DeletedRecords"/>
+		</field_ref>
+	</index>
+	<base_extra __stringCompHash="icu:63.1.0" __keywordBuildingHash="icu:63.1.0" package_name="TimeKeeper" structure_file_name="TimeKeeper" data_file_path=":TimeKeeper.4DD">
+		<journal_file journal_file_enabled="false"/>
+	</base_extra>
+</base>

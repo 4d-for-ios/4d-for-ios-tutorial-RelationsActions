@@ -1,0 +1,12 @@
+{
+   "name": "integerToName",
+   "type": ["integer"],
+   "binding": "localizedText",
+   "choiceList": {
+            "1":"David",
+            "2":"Vincent",
+            "3":"Eric",
+            "4":"Anass"
+        }
+
+}

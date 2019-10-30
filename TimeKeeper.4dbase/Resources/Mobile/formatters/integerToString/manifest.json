@@ -1,0 +1,15 @@
+{
+   "name": "integerToString",
+   "type": ["integer"],
+   "binding": "localizedText",
+   "choiceList": {"0":"Lemon",
+            "1":"Dazzling Blue",
+            "2":"Surf Spray",
+            "3":"Teal",
+            "4":"Light Lilac",
+            "5":"Tea",
+            "6":"Strawberry Ice",
+            "7":"Marsala"
+        }
+
+}

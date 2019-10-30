@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ios="http://www.4d.com">
+	<title>Time List</title>
+	<defs>
+		<symbol id="cancel">
+			<image x="0" y="0" width="30" height="30" xlink:href="$4DEVAL(tmpl_cancel)"/>
+		</symbol>
+		<text id="cookery" ios:values="search,section,f1,f2,f3,f4"/>
+	</defs>
+	<!-- background -->
+	<rect class="container"/>
+	<rect class="bgcontainer"/>
+	<g id="bgcontainer">
+		<!-- searchableField -->
+		<g transform="translate(0,60)">
+			<rect class="bg field" x="14" y="0" width="238" height="30"/>
+			<path class="magnifyingGlass" transform="translate(20,8) scale(1)"/>
+			<textArea id="search.label" class="label" x="17" y="8" width="230" ios:tips='$4DEVAL(:C991("searchBoxTips"))'>$4DEVAL(:C991("fieldToUseForSearch"))</textArea>
+			<rect id="search" class="droppable field optional multi-criteria" x="14" y="0" width="238" height="30" stroke-dasharray="5,2" ios:type="-3,-6" ios:bind="searchableField"/>
+			<use id="search.cancel" x="224" y="1" xlink:href="#cancel" visibility="hidden"/>
+		</g>
+		<!-- sectionField -->
+		<rect class="bg field" x="10" y="110" width="246" height="30"/>
+		<textArea id="section.label" class="label" x="0" y="118" width="250" ios:tips='$4DEVAL(:C991("sectionTips"))'>$4DEVAL(:C991("fieldToUseAsSection"))</textArea>
+		<rect id="section" class="droppable optional" x="10" y="110" width="246" height="30" stroke-dasharray="5,2" ios:type="-3,-6" ios:bind="sectionField"/>
+		<use id="section.cancel" x="224" y="111" xlink:href="#cancel" visibility="hidden"/>
+		
+		<!-- Name Field -->
+		<g transform="translate(0,150)">
+			<rect class="bg field" x="14" y="0" width="115" height="30"/>
+			<textArea id="f1.label" class="label" x="14" y="8" width="115">Project name</textArea>
+			<rect id="f1" class="droppable field" x="14" y="0" width="115" height="30" stroke-dasharray="5,2" ios:type="-3" ios:bind="fields[0]"/>
+			<use id="f1.cancel" x="100" y="1" xlink:href="#cancel" visibility="hidden"/>
+		</g>
+		<!-- Time field -->
+		<g transform="translate(0,150)">
+			<rect class="bg field" x="137" y="0" width="115" height="30"/>
+			<textArea id="f2.label" class="label" x="137" y="8" width="115">Time</textArea>
+			<rect id="f2" class="droppable field" x="137" y="0" width="115" height="30" stroke-dasharray="5,2" ios:type="-3" ios:bind="fields[1]"/>
+			<use id="f2.cancel" x="222" y="1" xlink:href="#cancel" visibility="hidden"/>
+		</g>
+
+		<!-- GraphField -->
+		<g transform="translate(0,185)">
+			<rect class="bg field" x="14" y="0" width="238" height="50"/>
+			<path class="circleGraph" transform="translate(110,4) scale(0.55)"/>
+			<textArea id="f3.label" class="label" x="14" y="12" width="238">Completion graph</textArea>
+			<rect id="f3" class="droppable field" x="14" y="0" width="238" height="50" stroke-dasharray="5,2" ios:type="1,8,9,25,35" ios:bind="fields[2]"/>
+			<use id="f3.cancel" x="222" y="0" xlink:href="#cancel" visibility="hidden"/>
+		</g>
+
+		<g transform="translate(0,240)">
+			<rect class="bg field" x="14" y="0" width="238" height="30"/>
+			<textArea id="f4.label" class="label" x="14" y="8" width="238">Color</textArea>
+			<rect id="f4" class="droppable field" x="14" y="0" width="238" height="30" stroke-dasharray="5,2" ios:type="-3" ios:bind="fields[3]"/>
+			<use id="f4.cancel" x="222" y="1" xlink:href="#cancel" visibility="hidden"/>
+		</g>
+	</g>
+</svg>

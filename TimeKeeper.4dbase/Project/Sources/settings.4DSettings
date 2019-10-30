@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="5">
+	<com.4d>
+		<deployment>
+			<options/>
+		</deployment>
+		<web>
+			<standalone_server>
+				<configuration allow_ssl="false" port_number="8099" publish_at_startup="true"/>
+			</standalone_server>
+		</web>
+		<server>
+			<network>
+				<options publication_name="TimeKeeper"/>
+			</network>
+		</server>
+	</com.4d>
+</preferences>

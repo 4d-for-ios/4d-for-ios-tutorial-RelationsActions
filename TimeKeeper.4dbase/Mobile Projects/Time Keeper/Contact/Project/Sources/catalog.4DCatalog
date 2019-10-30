@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="" uuid="868139806B7F4F258B69F526E0966267" collation_locale="en-gb">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="Contact" uuid="AFF2CFA0FB444C119AC6ABB4E8D40CB0" id="1">
+		<field name="ID" uuid="B3E0C00709D945AFB9103C8144BB8B99" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="firstName" uuid="AFE8A467BEFD4456BF8FDEAE64ED15AA" type="10" never_null="true" id="2"/>
+		<field name="lastName" uuid="37222A4D8A814F2A86D0CFC988AC30CB" type="10" never_null="true" id="3"/>
+		<field name="picture" uuid="5B7FA826A2794996AC2F51176520F37B" type="12" never_null="true" id="4"/>
+		<field name="phoneNumber" uuid="11A42E2D31054FEFAB9E8E0D0EA492A0" type="10" never_null="true" id="5"/>
+		<field name="email" uuid="B4398F6CEA2C42228C2AB179B2A1D681" type="10" limiting_length="255" never_null="true" id="6"/>
+		<primary_key field_name="ID" field_uuid="B3E0C00709D945AFB9103C8144BB8B99"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="10">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="40" top="40" width="172.515625" height="260.9765625"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<index kind="regular" unique_keys="true" uuid="BA293E9BE60244FB9D35E52FFC7BDF14" type="7">
+		<field_ref uuid="B3E0C00709D945AFB9103C8144BB8B99" name="ID">
+			<table_ref uuid="AFF2CFA0FB444C119AC6ABB4E8D40CB0" name="Contact"/>
+		</field_ref>
+	</index>
+	<base_extra>
+		<journal_file journal_file_enabled="true"/>
+	</base_extra>
+</base>
