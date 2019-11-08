@@ -22,7 +22,7 @@ let strawberryIce = UIColor(red: 225/255, green: 143/255, blue: 141/255, alpha: 
 let marsala = UIColor(red: 141/255, green: 95/255, blue: 93/255, alpha: 1.0)
 
 class ___TABLE___LeadingView: UIView {
-    
+
     @IBInspectable var oldBarColor: CGFloat = 0.9
 
     @objc dynamic public var colornumber: NSNumber? {
@@ -302,7 +302,7 @@ extension String {
         return Int(self) ?? 0
     }
 
-    var secondFromString : Int {
+    var secondFromString: Int {
         var components: Array = self.components(separatedBy: ":")
         let hours = components[0].integer
         let minutes = components[1].integer

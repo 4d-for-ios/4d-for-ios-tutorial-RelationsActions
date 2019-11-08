@@ -63,7 +63,7 @@ class ___TABLE___DetailsForm: DetailsForm___DETAILFORMTYPE___ {
                         self.backButton.transform = .identity
         },
                        completion: nil)
-        
+
         UIView.animate(withDuration: 1.5,
                        delay: 0.4,
                        usingSpringWithDamping: 0.6,
@@ -73,25 +73,25 @@ class ___TABLE___DetailsForm: DetailsForm___DETAILFORMTYPE___ {
                         self.previousButton.transform = .identity
         },
                        completion: nil)
-        
+
         UIView.animate(withDuration: 1.5,
                        delay: 0.6,
                        usingSpringWithDamping: 0.6,
                        initialSpringVelocity: 1.0,
                        options: [.curveEaseOut, .allowUserInteraction],
                        animations: {
-                        
+
                         self.nextButton.transform = .identity
         },
                        completion: nil)
-        
+
         UIView.animate(withDuration: 1.5,
                        delay: 0.8,
                        usingSpringWithDamping: 0.6,
                        initialSpringVelocity: 1.0,
                        options: [.curveEaseOut, .allowUserInteraction],
                        animations: {
-                        
+
                         self.actionButton.transform = .identity
         },
                        completion: nil)

@@ -16,7 +16,7 @@ class ___TABLE___CustomProgressBarList: UIView {
     @IBInspectable var oldpercent: CGFloat = 0
     @IBInspectable var barColor: CGFloat = 1
     @IBInspectable var oldBarColor: CGFloat = 0
-    
+
     @objc dynamic public var graphnumber: NSNumber? {
         get {
             return (percent) as NSNumber
@@ -31,7 +31,7 @@ class ___TABLE___CustomProgressBarList: UIView {
             setNeedsDisplay()
         }
     }
-    
+
     @objc dynamic public var colornumber: NSNumber? {
         get {
             return (barColor) as NSNumber
@@ -56,7 +56,7 @@ class ___TABLE___CustomProgressBarList: UIView {
     let Tea = UIColor(red: 163/255, green: 163/255, blue: 145/255, alpha: 1.0)
     let strawberryIce = UIColor(red: 225/255, green: 143/255, blue: 141/255, alpha: 1.0)
     let marsala = UIColor(red: 141/255, green: 95/255, blue: 93/255, alpha: 1.0)
-    
+
     override func draw(_ rect: CGRect) {
         let backgroundPath = UIBezierPath()
         backgroundPath.move(to: CGPoint(x: 0, y: self.frame.height))
@@ -73,9 +73,8 @@ class ___TABLE___CustomProgressBarList: UIView {
         shapeLayer.lineWidth = self.frame.height
         shapeLayer.lineCap = .round
 
-        
         var color = UIColor()
-        
+
         switch barColor {
         case 0 :
             color = lemon
@@ -98,13 +97,13 @@ class ___TABLE___CustomProgressBarList: UIView {
         }
         shapeLayer.strokeColor = color.cgColor
     }
-    
+
     override init(frame: CGRect) {
         self.shapeLayer = CAShapeLayer()
         super.init(frame: frame)
         self.layer.addSublayer(shapeLayer)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         self.shapeLayer = CAShapeLayer()
         super.init(coder: aDecoder)
@@ -113,31 +112,31 @@ class ___TABLE___CustomProgressBarList: UIView {
 }
 
 class ___TABLE___ListForm: ListForm___LISTFORMTYPE___ {
-    
+
     // Do not edit name or override tableName
     public override var tableName: String {
         return "___TABLE___"
     }
-    
+
     // MARK: Events
     override func onLoad() {
         // Do any additional setup after loading the view.
     }
-    
+
     override func onWillAppear(_ animated: Bool) {
         // Called when the view is about to made visible. Default does nothing
     }
-    
+
     override func onDidAppear(_ animated: Bool) {
         // Called when the view has been fully transitioned onto the screen. Default does nothing
     }
-    
+
     override func onWillDisappear(_ animated: Bool) {
         // Called when the view is dismissed, covered or otherwise hidden. Default does nothing
     }
-    
+
     override func onDidDisappear(_ animated: Bool) {
         // Called after the view was dismissed, covered or otherwise hidden. Default does nothing
     }
-    
+
 }
